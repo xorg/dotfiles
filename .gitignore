@@ -1,0 +1,4 @@
+*.swp
+*.pyc
+mpd/state
+mpd/log
