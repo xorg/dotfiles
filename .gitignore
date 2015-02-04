@@ -2,3 +2,5 @@
 *.pyc
 mpd/state
 mpd/log
+mpd/pid
+mpd/sticker.sql

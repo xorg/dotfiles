@@ -22,4 +22,7 @@
         force: true
     ~/.wgetrc: wgetrc
     ~/.screenrc: screenrc
+    ~/.config/bspwm: bspwm/
+    ~/.config/sxhkd: sxhkd/
+    ~/.xinitrc: .xinitrc 
 - shell: []
