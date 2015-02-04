@@ -1,0 +1,25 @@
+- clean:
+  - '~'
+  - '~/.config/' 
+
+- link:
+    ~/.config/colors:
+        create: true
+        path: colors
+        force: true
+    ~/.config/beets:
+        create: true
+        path: beets/
+        force: true
+    ~/.vimrc:
+        path: vimrc
+        force: true
+    ~/.zshrc:
+        path: zshrc
+        force: true
+    ~/.Xdefaults:
+        path: Xdefaults
+        force: true
+    ~/.wgetrc: wgetrc
+    ~/.screenrc: screenrc
+- shell: []
