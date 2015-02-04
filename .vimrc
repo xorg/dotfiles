@@ -23,7 +23,7 @@ filetype indent plugin on
 " Enable syntax highlighting
 syntax on
 
-colorscheme wombat256
+colorscheme wombat256custom
 "------------------------------------------------------------
 " Must have options {{{1
 "

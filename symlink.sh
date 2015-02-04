@@ -7,7 +7,7 @@ PWD=`pwd`
 # link all dotfiles to home root
 sync_dotfiles() {
   echo "Symlinking dotfiles..."
-  for d in ./.*
+  for d in $PWD/.*
   do
     if [[ -f $f ]]; then
     ln -sf $f $HOME/
@@ -18,13 +18,10 @@ sync_dotfiles() {
 # link files from config dir separately
 sync_config() {
   echo "Symlinking config dir..."
-  mkdir -p ~/.config/beets/
-  ln -sf $PWD/beets/config.yml $HOME/.config/beets/
+  ln -sf $PWD/beets/ $HOME/.config/beets/
+  ln -sf $PWD/colors/ $HOME/.config/beets/
 
-  mkdir -p ~/.config/zsh/
-  ln -sf $PWD/config/zsh/antigen.zsh $HOME/.config/zsh/
-
-  ln -sf $PWD/.oh-my-zsh $HOME/
+  ln -sf $PWD/oh-my-zsh $HOME/.oh-my-zsh
 }
 
 cleanup() {
