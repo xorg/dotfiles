@@ -15,6 +15,9 @@
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
 
+" Let vim know which machine its on
+let host = $HOST
+
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
@@ -23,7 +26,13 @@ filetype indent plugin on
 " Enable syntax highlighting
 syntax on
 
-colorscheme wombat256custom
+if host == 'rhino'
+  " Unmodified colorscheme has solid background for opaque terminals
+  colorscheme wombat256
+else
+  " Modified scheme with no background for transparent terminals
+  colorscheme wombat256custom
+endif
 "------------------------------------------------------------
 " Must have options {{{1
 "
@@ -131,10 +140,10 @@ set pastetoggle=<F11>
 "
 " Indentation settings according to personal preference.
 
-" Indentation settings for using 2 spaces instead of tabs.
+" Indentation settings for using 4 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 " Indentation settings for using hard tabs for indent. Display tabs as
@@ -164,4 +173,5 @@ endif
 
 "set completeopt-=preview
 
-
+" Initialize pathogen
+execute pathogen#infect()
