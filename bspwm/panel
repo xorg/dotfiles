@@ -1,0 +1,129 @@
+#!/bin/bash
+#
+# Bar Ain't Recursive panel
+# by Ivan Sokolov
+#
+
+WHITE=a0a0a0
+RED=a54242
+GREEN=8c9440
+BLACK=212121
+GRAY=404040
+
+function A {
+        echo -n "%{A:$2:}$1%{A}"
+}
+
+function B {
+        echo -n "%{B#ff$2}$1%{B-}"
+}
+
+function F {
+        echo -n "%{F#ff$2}$1%{F-}"
+}
+
+function o {
+        echo "%{+o}$1%{-o}"
+}
+
+function u {
+        echo "%{+u}$1%{-u}"
+}
+
+###
+
+DIV=$(F '|' $GRAY)
+
+###
+
+network() {
+        ping -c 1 8.8.8.8 >/dev/null 2>&1 && echo -n $(F + $GREEN) || echo -n $(F - $RED)
+}
+
+calendar() {
+        DATE=$(date -u +%d/%m/%y)
+        echo -n $(F $DATE $WHITE)
+}
+
+clock() {
+        TIME=$(date -u +%H:%M)
+        echo -n $(F $TIME $WHITE)
+}
+
+volume() {
+  VOLUME=$(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master))
+  if [[ $( awk -F"[][]" '/dB/ { print $6 }' <(amixer sget Master)
+    ) -eq 'on' ]]
+        then
+                VCOLOR=$WHITE
+        else
+                VCOLOR=$GRAY
+        fi
+        echo -n "$(A $(F $VOLUME $VCOLOR) volume)"
+}
+
+mem() {
+        TOTAL=`cat /proc/meminfo | grep MemTotal: | awk '{print $2}'`
+        USED=`cat /proc/meminfo | grep Active: | awk '{print $2}'`
+        MEM=`awk "BEGIN {printf \"%.f\n\", $USED/$TOT*100}"`
+        if [[ $MEM -lt 50 ]]
+        then
+                BCOLOR=$WHITE
+        else
+                BCOLOR=$RED
+        fi
+        echo -n $(F $MEM ff$BCOLOR)
+}
+
+layout() {
+        echo -n "$(A $(F $(xkb-switch) $WHITE) layout)"
+}
+
+mpc_status() {
+        if [[ -n $(mpc | grep playing) ]]
+        then
+                echo -n "$(F "$(mpc current -f "[%title%]")" $WHITE) $DIV "
+                echo -n "$(F "$(mpc current -f "[%album%]")" $WHITE) $DIV "
+                echo -n "$(F "$(mpc current -f "[%artist%]")" $WHITE) "
+        else
+                echo -n ''
+        fi
+}
+
+#               echo -n "$(F "$(mpc current -f "[%title% $(F - $GRAY) %album% $(F - $GRAY) %artist%]|[%file%]")" $WHITE)"
+
+mpc_controls() {
+        echo -n ''
+}
+
+while true
+do
+        # Left
+        printf '%s' '%{l}'
+        # Desktops
+        for i in 1 2 3 4 5
+        do
+                printf ' %s' "%{A:$i:}$(F \| $GRAY)$(F $i $WHITE)$(F \| $GRAY)%{A}"
+        done
+        
+        # Center
+        printf '%s' '%{c}'
+        printf '%s' "$(mpc_status)"
+        # printf '%s' "$(mpc_controls)"
+        
+        # Right
+        printf '%s' '%{r}'
+        printf ' %s' $(network) $DIV 
+        printf ' %s' $(layout) $DIV
+        printf ' %s' $(volume) $DIV 
+        # printf ' %s' $(battery) $DIV 
+        printf ' %s' $(clock)
+        printf ' %s \n' $(calendar)
+
+        sleep 0.5s
+done | bar-aint-recursive \
+        -F \#ff$WHITE \
+        -B \#ff$BLACK \
+        -g 1680 \
+        -f 'Inconsolata-10' | ~/.config/bspwm/spawner
+
