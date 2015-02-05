@@ -25,4 +25,8 @@
     ~/.config/bspwm: bspwm/
     ~/.config/sxhkd: sxhkd/
     ~/.xinitrc: xinitrc 
+    ~/.vim: 
+        path: vim/
+        force: true
+
 - shell: []
