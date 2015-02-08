@@ -15,6 +15,9 @@
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
 
+let mapleader=","
+
+
 " Let vim know which machine its on
 let host = $HOST
 
