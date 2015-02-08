@@ -36,6 +36,22 @@ else
   " Modified scheme with no background for transparent terminals
   colorscheme wombat256custom
 endif
+
+" Keybindings
+
+map <C-n> :NERDTreeToggle<CR>
+
+" Switch windows with ctrl-hjkl
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+
+" Switch buffers with alt-jk
+nnoremap <A-j> :bnext<CR>
+nnoremap <A-k> :bprevious<CR>
+
+
 "------------------------------------------------------------
 " Must have options {{{1
 "
