@@ -43,7 +43,10 @@ super + {_,shift + }c
 super + {comma,period}
 	bspc desktop -C {backward,forward}
 
-super + {Left, Right}
+alt + ctrl + {h, l}
+	bspc desktop -f {prev,next}
+
+alt + ctrl + {Left, Right}
 	bspc desktop -f {prev,next}
 
 super + ctrl + {h,j,k,l}
@@ -95,11 +98,8 @@ ctrl + alt + {Next,Prior}
 ctrl + alt + Home
         mpc toggle
 
-ctrl + alt + Up
-        amixer -q sset Master 3%+
-
-ctrl + alt + Down 
-        amixer -q sset Master 3%-
+ctrl + alt + {Up, Down}
+        amixer -q sset Master 3%{+,-}
 
 alt + m 
         dmenu-mpd -a

@@ -36,8 +36,14 @@ DIV=$(F '|' $GRAY)
 
 ###
 
-network() {
-        ping -c 1 8.8.8.8 >/dev/null 2>&1 && echo -n $(F + $GREEN) || echo -n $(F - $RED)
+pacman() {
+        PKG=`~/bin/paconky /tmp/`
+        echo -n $PKG
+}
+
+mail() {
+    MAIL=`~/bin/gmail.py`
+    echo -n $MAIL
 }
 
 calendar() {
@@ -113,7 +119,8 @@ do
         
         # Right
         printf '%s' '%{r}'
-        printf ' %s' $(network) $DIV 
+        printf ' %s' $(pacman) $DIV 
+        printf ' %s' $(mail) $DIV 
         printf ' %s' $(layout) $DIV
         printf ' %s' $(volume) $DIV 
         # printf ' %s' $(battery) $DIV 

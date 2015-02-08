@@ -28,5 +28,6 @@
     ~/.vim: 
         path: vim/
         force: true
+    ~/bin: scripts/
 
 - shell: []
