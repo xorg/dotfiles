@@ -29,12 +29,12 @@ filetype indent plugin on
 " Enable syntax highlighting
 syntax on
 
-if host == 'rhino'
+if host == 'sonic'
   " Unmodified colorscheme has solid background for opaque terminals
-  colorscheme wombat256
+  colorscheme wombat256custom
 else
   " Modified scheme with no background for transparent terminals
-  colorscheme wombat256custom
+  colorscheme wombat256
 endif
 
 " Keybindings

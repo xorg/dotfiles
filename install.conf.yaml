@@ -29,5 +29,6 @@
         path: vim/
         force: true
     ~/bin: scripts/
+    ~/.oh-my-zsh: oh-my-zsh/
 
 - shell: []
