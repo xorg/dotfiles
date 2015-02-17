@@ -1,3 +1,4 @@
+source ~/.zprofile &
 sxhkd &
 setxkbmap ch &
 mpd & 
