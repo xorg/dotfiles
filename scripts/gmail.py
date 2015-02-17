@@ -4,8 +4,8 @@ from urllib.request import FancyURLopener
 import os
 
 # read user and pw from environment
-email = os.environ['GMAIL_USER'] # @gmail.com can be left out
-password  = os.environ['GMAIL_PW'] 
+email = 'xorg112' # @gmail.com can be left out
+password = 'qasw12-google' 
 
 url = 'https://%s:%s@mail.google.com/mail/feed/atom' % (email, password)
 
