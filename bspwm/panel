@@ -37,7 +37,7 @@ DIV=$(F '|' $GRAY)
 ###
 
 pacman() {
-        PKG=`~/bin/paconky /tmp/`
+        PKG=`~/bin/pacpack.pl`
         echo -n $PKG
 }
 
@@ -119,7 +119,6 @@ do
         
         # Right
         printf '%s' '%{r}'
-        printf ' %s' $(pacman) $DIV 
         printf ' %s' $(mail) $DIV 
         printf ' %s' $(layout) $DIV
         printf ' %s' $(volume) $DIV 

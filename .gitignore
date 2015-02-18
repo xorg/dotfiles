@@ -3,5 +3,6 @@
 mpd/state
 mpd/log
 mpd/pid
+mpd/database
 mpd/sticker.sql
 beets/state.pickle

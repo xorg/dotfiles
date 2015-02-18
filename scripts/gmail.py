@@ -3,7 +3,6 @@
 from urllib.request import FancyURLopener
 import os
 
-# read user and pw from environment
 email='xorg112' 
 #password=password
 
