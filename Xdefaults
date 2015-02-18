@@ -17,10 +17,10 @@ URxvt*colorUL:          #b698d9
 URxvt*perl-lib:         /usr/lib/urxvt/perl
 URxvt*perl-ext-common:  default,-option-popup,-selection-popup,matcher
 URxvt*matcher.button:   1
-URxvt*font:             xft:Source Code Pro-10
-URxvt*boldFont:             xft:Source Code Pro-10
+URxvt*font:             xft:Inconsolata-10
+URxvt*boldFont:             xft:Inconsolata-10
 URxvt.depth: 32
 URxvt.background: rgba:1111/1111/1111/dddd
 URxvt*fading:           30
 
-dzen2.font: xft:Source Code Pro-10
+dzen2.font: xft:Source Code Pro-9
