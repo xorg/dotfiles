@@ -30,15 +30,11 @@ endif
 
 map <C-n> :NERDTreeToggle<CR>
 
-" Switch windows with ctrl-hjkl
-nmap <silent> <C-k> :wincmd k<CR>
-nmap <silent> <C-j> :wincmd j<CR>
-nmap <silent> <C-h> :wincmd h<CR>
-nmap <silent> <C-l> :wincmd l<CR>
-
-" Switch buffers with alt-jk
-nnoremap <A-j> :bnext<CR>
-nnoremap <A-k> :bprevious<CR>
+" Switch buffers with ctrl-hjkl
+nmap <silent> <C-k> :bprevious<CR>
+nmap <silent> <C-j> :bnext <CR>
+nmap <silent> <C-h> :bprevious <CR>
+nmap <silent> <C-l> :bnext <CR>
 
 " Better command-line completion
 set wildmenu
