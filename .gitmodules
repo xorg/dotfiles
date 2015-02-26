@@ -22,3 +22,6 @@
 [submodule "vim/bundle/--force"]
 	path = vim/bundle/--force
 	url = https://github.com/bling/vim-airline
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic
