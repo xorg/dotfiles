@@ -28,7 +28,6 @@ endif
 
 " Keybindings
 
-map <C-n> :NERDTreeToggle<CR>
 
 " Switch windows with ctrl-hjkl
 nmap <silent> <C-k> :wincmd k<CR>
@@ -53,9 +52,7 @@ set hlsearch
 " Keep 1000 lines of command line history
 set history=1000
 
-" Use case insensitive search, except when using capital letters
-set ignorecase
-set smartcase
+" Use case insensitive search, except when using capital letters set ignorecase set smartcase
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
@@ -157,8 +154,8 @@ endif
 " Initialize pathogen
 execute pathogen#infect()
 
-" vim-airline settings
-" 
+"" vim-airline settings
+"--------------------- 
 " Always show statusbar
 set laststatus=2
 
@@ -170,3 +167,22 @@ let g:airline_detect_paste=1
 
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
+
+"" Syntastic settings
+"--------------------
+
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
+augroup mySyntastic
+ au!
+ au FileType tex let b:syntastic_mode = "passive"
+augroup END
+
+
+"" NerdTree Settings
+
+" Toggle NerdTree
+map <C-n> :NERDTreeToggle<CR>
+
+" Jump to current open file in NerdTree
+map <leader>r :NERDTreeFind<cr>
