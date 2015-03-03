@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-My dotfiles organized by [dotbot][https://github.com/anishathalye/dotbot]
+My dotfiles organized by https://github.com/anishathalye/dotbot
