@@ -30,5 +30,6 @@
         force: true
     ~/bin: scripts/
     ~/.oh-my-zsh: oh-my-zsh/
+    ~/.rtorrent.rc: rtorrent.rc
 
 - shell: []
