@@ -22,6 +22,7 @@ $ ./install
 
 Vim
 -----
+
 Install vim plugins
 ```
 $ git submodule update --init
