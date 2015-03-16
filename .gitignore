@@ -6,3 +6,5 @@ mpd/pid
 mpd/database
 mpd/sticker.sql
 beets/state.pickle
+beets/beetslog.txt
+beets/music.blb
