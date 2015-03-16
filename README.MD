@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-My dotfiles organized by anishathalye/dotbot
+My dotfiles organized by https://github.com/anishathalye/dotbot
 
 Installation
 -----------
