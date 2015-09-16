@@ -182,3 +182,5 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Jump to current open file in NerdTree
 map <leader>r :NERDTreeFind<cr>
+
+let g:ctrlp_follow_symlinks=1
